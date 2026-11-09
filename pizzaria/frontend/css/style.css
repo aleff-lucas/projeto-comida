@@ -1,0 +1,169 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-primaria: #86b5fc;
+    --cor-secundaria: #36465a;
+    --cor-branca: #ffffff;
+    --cor-preta: #000000;
+    --cor-destaque: #ffff00;
+    --cor-hover: #404246;
+    --cor-neutra: #f2f2f2;
+    --cor-sombra: rgba(0, 0, 0, 0.1);
+
+    --fonte-1: 16px;
+    --fonte-2: 18px;
+    --fonte-3: 20px;
+    --fonte-4: 25px;
+    --fonte-5: 30px;
+    --fonte-6: 40px;
+    --fonte-7: 50px;
+
+    --espaco-1: 5px;
+    --espaco-2: 10px;
+    --espaco-3: 15px;
+    --espaco-4: 20px;
+    --espaco-5: 30px;
+    --espaco-6: 40px;
+    --espaco-7: 50px;
+    --espaco-8: 60px;
+}
+
+body.admin{
+    background-image:linear-gradient(45deg,#86b5fc,#36465a);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    background-attachment: fixed;
+}
+
+.admin header h1 {
+    color:var(--cor-branca);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+
+#lista-pizzas {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(220px, 1fr) );
+    gap: clamp(10px, 2vw, 20px);
+    
+}
+
+.pizza-card {
+    padding: clamp(12px, 3vw, 24px);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+
+.adminupdate {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid var(--cor-secundaria);
+    border-radius: 12px;
+    background-color:var(--cor-branca)
+}
+
+.adminupdate form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-2);
+}
+
+.adminupdate input,
+.adminupdate select,
+.adminupdate textarea,
+.adminupdate button {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+}
+
+.adminupdate[hidden] {
+    display: none;
+}
+
+.admin-acoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--espaco-2);
+}
+
+.admin-acoes {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.adminupdate .admin-acoes button {
+    width: 100%;
+}
+
+@media (min-width: 601px) {
+    .admin-acoes {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .adminupdate .admin-acoes button {
+        width: auto;
+    }
+}
+
+.adminadicionar input,
+.adminadicionar select,
+.adminadicionar textarea,
+.adminupdate input,
+.adminupdate select,
+.adminupdate textarea {
+    width: 100%;
+    max-width: 100%;
+}
+
+ /* Regras para telas menores */
+@media (max-width: 600px) {
+   
+    #lista-pizzas {
+        grid-template-columns: 1fr;
+    }
+
+    .adminupdate {
+        width: auto;
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .admin-acoes {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .adminupdate .admin-acoes button {
+        width: 100%;
+        flex: 1 1 auto;
+    }
+
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    #lista-pizzas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .admin header h1 {
+        font-size: 1.5rem;
+    }
+}

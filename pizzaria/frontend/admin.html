@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Área Administrativa</title>
+</head>
+
+<body class="admin">
+
+    <header>
+        <h1>Área Administrativa</h1>
+        <p>Bem-vindo, administrador!</p>
+    </header>
+
+    <div class="container">
+    <!-- Adicionar pizza -->
+    <section class="adminadicionar">
+
+        <h2>Adicionar Pizza</h2>
+
+        <form action="/pizzas" method="POST" enctype="multipart/form-data">
+
+            <label for="nome">Nome da Pizza:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao" required^></textarea>
+
+            <label for="preco">Preço:</label>
+            <input type="number" id="preco" name="preco" step="0.01" min="0" required>
+
+            <label for="categoria">Categoria:</label>
+            <select id="categoria" name="categoria" required>
+                <option value="tradicional">Tradicional</option>
+                <option value="especial">Especial</option>
+                <option value="vegetariana">Vegetariana</option>
+                <option value="doce">Doce</option>
+            </select>
+
+            <label for="imagem">Imagem da pizza:</label>
+            <input type="file" id="imagem" name="imagem" accept="image/*" required>
+
+            <button type="submit">Adicionar Pizza</button>
+
+        </form>
+
+    </section>
+
+
+   <!-- Cardápio administrativo -->
+<section class="admincardapio">
+    <h2>Editar Cardápio</h2>
+
+    <div id="lista-pizzas">
+        <!-- O JavaScript vai colocar as pizzas aqui -->
+    </div>
+</section>
+
+<!-- Painel de edição -->
+<section class="adminupdate" id="editor-pizza" hidden>
+
+    <h2>Editar Pizza</h2>
+
+    <form id="form-atualizar-pizza">
+
+        <label for="nome-atualizar">Nome:</label>
+        <input type="text" id="nome-atualizar"
+               name="nome" required>
+
+        <label for="descricao-atualizar">Descrição:</label>
+        <textarea id="descricao-atualizar"
+                  name="descricao" required></textarea>
+
+        <label for="preco-atualizar">Preço:</label>
+        <input type="number" id="preco-atualizar"
+               name="preco" step="0.01" min="0" required>
+
+        <label for="categoria-atualizar">Categoria:</label>
+        <select id="categoria-atualizar" name="categoria" required>
+            <option value="tradicional">Tradicional</option>
+            <option value="especial">Especial</option>
+            <option value="vegetariana">Vegetariana</option>
+            <option value="doce">Doce</option>
+        </select>
+
+        <label for="imagem-atualizar">Trocar imagem:</label>
+        <input type="file" id="imagem-atualizar"
+               name="imagem" accept="image/*">
+
+        <label for="estoque">Disponibilidade:</label>
+        <select id="estoque" name="estoque" required>
+            <option value="disponivel">Disponível</option>
+            <option value="indisponivel">Indisponível</option>
+        </select>
+
+        <div class="admin-acoes">
+             <button type="submit">Salvar alterações</button>
+             <button type="button" id="fechar-editor">Cancelar</button>
+        </div>
+
+    </form>
+</section>
+
+
+    <!-- Adicionar bebida -->
+    <section class="adminbebidas">
+
+        <h2>Adicionar Bebida</h2>
+
+        <form action="/bebidas" method="POST">
+
+            <label for="nomedabebida">Nome da bebida:</label>
+            <input type="text" id="nomedabebida" name="nomedabebida" required>
+
+            <label for="precodabebida">Preço:</label>
+            <input type="number" id="precodabebida" name="precodabebida" step="0.01" min="0" required>
+
+            <label for="imagem">Imagem da bebida:</label>
+            <input type="file" id="imagembebida" name="imagembebida" accept="imagebebida/*" required>
+
+            <div class="adminbutton">
+                <button type="submit">Adicionar Bebida</button>
+            </div>
+
+        </form>
+
+    </section>
+
+</div>
+
+<script src="js/admin.js"></script>
+
+</body>
+</html>
